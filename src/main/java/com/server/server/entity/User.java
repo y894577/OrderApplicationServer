@@ -5,24 +5,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
-public class OrderUser {
+@Table(name = "user")
+public class User {
     @Id
-    private Integer id;
-
     private String userID;
 
     private String userName;
 
-    public OrderUser() {
-    }
+    private String userPwd;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public User() {
     }
 
     public String getUserID() {
@@ -40,4 +32,13 @@ public class OrderUser {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public String getUserPwd() {
+        return userPwd;
+    }
+
+    public void setUserPwd(String userPwd) {
+        this.userPwd = userPwd;
+    }
+
 }
