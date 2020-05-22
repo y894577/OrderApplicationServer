@@ -11,4 +11,6 @@ public interface GoodsRepository extends JpaRepository<Goods, Integer> {
 
     @Query(value = "select distinct tag from goods",nativeQuery = true)
     public List<String> findAllTag();
+
+    public Goods findAllByID(String ID);
 }

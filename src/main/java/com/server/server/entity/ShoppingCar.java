@@ -1,19 +1,17 @@
 package com.server.server.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.omg.CORBA.PRIVATE_MEMBER;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "shoppingcar")
 public class ShoppingCar {
 
     @Id
-    @GenericGenerator(name="idGenerator", strategy="uuid")
-    @GeneratedValue(generator="idGenerator")
+    @GenericGenerator(name = "idGenerator", strategy = "uuid")
+    @GeneratedValue(generator = "idGenerator")
     private String carID;
 
     private String userID;
@@ -22,13 +20,17 @@ public class ShoppingCar {
 
     private int number;
 
+    private float price;
+
+    private String name;
+
     public ShoppingCar(String userID, String goodsID, int number) {
         this.userID = userID;
         this.goodsID = goodsID;
         this.number = number;
     }
 
-    public ShoppingCar(){
+    public ShoppingCar() {
 
     }
 
@@ -56,11 +58,27 @@ public class ShoppingCar {
         this.goodsID = goodsID;
     }
 
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
     public int getNumber() {
         return number;
     }
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
