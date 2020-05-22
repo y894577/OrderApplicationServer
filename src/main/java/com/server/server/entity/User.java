@@ -14,6 +14,12 @@ public class User {
 
     private String userPwd;
 
+    public User(String userID, String userName, String userPwd) {
+        this.userID = userID;
+        this.userName = userName;
+        this.userPwd = userPwd;
+    }
+
     public User() {
     }
 

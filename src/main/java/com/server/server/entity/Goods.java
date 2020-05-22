@@ -13,6 +13,13 @@ public class Goods {
     private float price;
     private String tag;
 
+    public Goods(String ID, String name, float price, String tag) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
+        this.tag = tag;
+    }
+
     public Goods() {
     }
 

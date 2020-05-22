@@ -32,4 +32,5 @@ public class GoodsController {
     public List<String> getAllTag() {
         return goodsRepository.findAllTag();
     }
+
 }
