@@ -24,7 +24,6 @@ public class GoodsController {
     //    only for test
     @GetMapping(value = "/hello")
     public List<Goods> getGoods() {
-        System.out.println(goodsRepository.findAll());
         return goodsRepository.findAll();
     }
 

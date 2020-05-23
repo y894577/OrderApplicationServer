@@ -5,12 +5,10 @@ import com.server.server.entity.ShoppingCar;
 import com.server.server.repository.GoodsRepository;
 import com.server.server.repository.ShoppingCarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -25,8 +23,8 @@ public class ShoppingCarController {
     @PostMapping(value = "/insertGoodsToShoppingCar")
     private String insertGoodsToShoppingCar
             (@RequestParam("userID") String userID, @RequestParam("goodsID") String goodsID) {
-        userID = userID.replace("\"","");
-        goodsID = goodsID.replace("\"","");
+        userID = userID.replace("\"", "");
+        goodsID = goodsID.replace("\"", "");
         ShoppingCar item = new ShoppingCar();
         item = shoppingCarRepository.findAllByUserIDAndGoodsID(userID, goodsID);
         if (item == null) {
@@ -43,7 +41,6 @@ public class ShoppingCarController {
     @PostMapping(value = "/getShoppingCar")
     private List<ShoppingCar> findAllByUserID(@RequestParam("userID") String userID) {
         List<ShoppingCar> car = shoppingCarRepository.findAllByUserID(userID);
-        System.out.println(car.size());
         for (int i = 0; i < car.size(); i++) {
             String goodsID = car.get(i).getGoodsID();
             Goods goods = new Goods();
@@ -54,5 +51,10 @@ public class ShoppingCarController {
             car.get(i).setName(name);
         }
         return car;
+    }
+
+    @PostMapping(value = "/clearCar")
+    public void deleteAllCar(@RequestParam("userID") String userID) {
+        shoppingCarRepository.removeAllByUserID(userID);
     }
 }

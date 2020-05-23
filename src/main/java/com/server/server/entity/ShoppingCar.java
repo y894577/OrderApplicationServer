@@ -1,7 +1,6 @@
 package com.server.server.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 import javax.persistence.*;
 
