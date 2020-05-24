@@ -35,24 +35,5 @@ public class UserController {
     }
 
 
-//    @Autowired
-//    private GoodsRepository goodsRepository;
-//
-//    @GetMapping(value = "/getGoodsListByTag")
-//    public List<Goods> getGoodsList(@RequestParam("tag") String Tag) {
-//        return goodsRepository.findByTag(Tag);
-//    }
-//
-//    //    only for test
-//    @GetMapping(value = "/hello")
-//    public List<Goods> getGoods() {
-//        System.out.println(goodsRepository.findAll());
-//        return goodsRepository.findAll();
-//    }
-//
-//    @GetMapping(value = "/getAllTag")
-//    public List<String> getAllTag() {
-//        return goodsRepository.findAllTag();
-//    }
 
 }
