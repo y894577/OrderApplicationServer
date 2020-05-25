@@ -22,7 +22,7 @@ public class OrderController {
     @PostMapping(value = "/submitOrder")
     public String submitOrder(@RequestParam("userID") String userID, @RequestParam("sum") String money) {
         userID = userID.replace("\"", "");
-        money = money.replace("\"", "").substring(3,money.length());
+        money = money.replace("\"", "").substring(3,money.length()-1);
         Order item = new Order();
         item = new Order(userID, Float.parseFloat(money));
         orderRepository.saveAndFlush(item);
